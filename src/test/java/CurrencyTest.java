@@ -6,6 +6,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class CurrencyTest {
 
@@ -20,7 +21,9 @@ public class CurrencyTest {
 
         CurrencyPageBankLV bankPage = new CurrencyPageBankLV(basefunc);
         bankPage.openBankCurrencyPage();
-        HashMap bankTable = bankPage.bankCurrencyTable();
+        Map bankTable = bankPage.bankCurrencyTable();
+
+        System.out.println( bankTable);
 
         for (Object code : delfitable.keySet()
                 ) {
@@ -41,11 +44,14 @@ public class CurrencyTest {
 
         HashMap currencyTable = currencyPage.delfiCurrencyTable();
 
-        for (String key : currencyTable.keySet()) {
+        String cadRate = currencyTable.get("CAD").toString();
+
+        System.out.println(cadRate);
+
 
         }
     }
-}
+
 
 
 
